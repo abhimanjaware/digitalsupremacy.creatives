@@ -217,7 +217,7 @@ const Hero = ({ toggleContactForm }) => {
           CONTACT <span className="ml-1 md:ml-2">→</span>
         </button>
         
-        <a href="#" className="text-gray-800 hover:text-gray-600 transition-colors duration-300 text-sm md:text-base" aria-label="Instagram">
+        <a href="instagram.com" className="text-gray-800 hover:text-gray-600 transition-colors duration-300 text-sm md:text-base" aria-label="Instagram">
           <i className="fab fa-instagram"></i>
         </a>
         <a href="#" className="text-gray-800 hover:text-gray-600 transition-colors duration-300 text-sm md:text-base" aria-label="LinkedIn">

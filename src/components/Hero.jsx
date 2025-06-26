@@ -217,15 +217,15 @@ const Hero = ({ toggleContactForm }) => {
           CONTACT <span className="ml-1 md:ml-2">→</span>
         </button>
         
-        <a href="instagram.com" className="text-gray-800 hover:text-gray-600 transition-colors duration-300 text-sm md:text-base" aria-label="Instagram">
+        <a href="https://www.instagram.com/digitalsupremacy.in?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="text-gray-800 hover:text-gray-600 transition-colors duration-300 text-sm md:text-base" aria-label="Instagram">
           <i className="fab fa-instagram"></i>
         </a>
-        <a href="#" className="text-gray-800 hover:text-gray-600 transition-colors duration-300 text-sm md:text-base" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/company/digital-supremacy-in/" className="text-gray-800 hover:text-gray-600 transition-colors duration-300 text-sm md:text-base" aria-label="LinkedIn">
           <i className="fab fa-linkedin-in"></i>
         </a>
-        <a href="#" className="text-gray-800 hover:text-gray-600 transition-colors duration-300 text-sm md:text-base" aria-label="Search">
+        {/* <a href="#" className="text-gray-800 hover:text-gray-600 transition-colors duration-300 text-sm md:text-base" aria-label="Search">
           <i className="fas fa-search"></i>
-        </a>
+        </a> */}
       </div>
 
       <div 

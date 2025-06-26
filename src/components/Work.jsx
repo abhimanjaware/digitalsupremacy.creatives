@@ -2,6 +2,23 @@ import { useRef, useEffect, useMemo } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+import yt1 from '@/assets/images/yt1dhan ipo investing.jpg';
+import yt2 from '@/assets/images/yt2dhan small cap.jpg';
+import yt3 from '@/assets/images/yt3Dhan today in markets.jpg';
+import p1 from '@/assets/images/p1army podcast.jpeg';
+import p2 from '@/assets/images/p2brahmos podcast.jpg';
+import p3 from '@/assets/images/p3groww podcast.jpg';
+import hardik from '@/assets/images/hardikhhtumb.png';
+import freepik from '@/assets/images/freepik__expand__52420.png';
+import thermax from '@/assets/images/thermaxthumb.png';
+import g1 from '@/assets/images/graphicsthumbnail.png';
+import g2 from '@/assets/images/graphicsposter1.jpg';
+import g3 from '@/assets/images/graphicsposter2.jpg';
+import g4 from '@/assets/images/graphicspost1.png';
+import g5 from '@/assets/images/graphicspost2.png.jpg';
+
+
+
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
@@ -12,9 +29,24 @@ const services = [
     whatWeDo: ['Multi-cam sync', 'Smooth transitions & B-roll', 'Title cards & lower thirds', 'Color grading & sound design'],
     cta: "🎬 Let's turn your raw footage into binge-worthy content.",
     videos: [
-      { url: 'src/assets/videos/yt1dhan ipo investing.mp4', thumbnail: 'src/assets/images/yt1dhan ipo investing.jpg', title: 'Documentary Style', description: 'Cinematic storytelling approach' },
-      { url: 'src/assets/videos/yt2dhan small cap.mp4', thumbnail: 'src/assets/images/yt2dhan small cap.jpg', title: 'Educational Content', description: 'Clear visual explanations' },
-      { url: 'src/assets/videos/yt3dhan today in markets.mp4', thumbnail: 'src/assets/images/yt3Dhan today in markets.jpg', title: 'Vlog Production', description: 'Personal brand storytelling' }
+      {
+        url: 'https://digitalsupremacy.in/creative-site-videos/yt1dhan%20ipo%20investing.mp4',
+        thumbnail: yt1,
+        title: 'Documentary Style',
+        description: 'Cinematic storytelling approach'
+      },
+      {
+        url: 'https://digitalsupremacy.in/creative-site-videos/yt2dhan%20small%20cap.mp4',
+        thumbnail: yt2,
+        title: 'Educational Content',
+        description: 'Clear visual explanations'
+      },
+      {
+        url: 'https://digitalsupremacy.in/creative-site-videos/yt3dhan%20today%20in%20markets.mp4',
+        thumbnail: yt3,
+        title: 'Vlog Production',
+        description: 'Personal brand storytelling'
+      }
     ]
   },
   {
@@ -24,9 +56,24 @@ const services = [
     whatWeDo: ['Multi-angle visual sync', 'Branded intros/outros', 'Subtitles & waveform animations', 'Noise reduction & mastering'],
     cta: "🎧 Let your podcast look as good as it sounds.",
     videos: [
-      { url: 'src/assets/videos/p1army podcast trailer.mp4', thumbnail: 'src/assets/images/p1army podcast.jpeg', title: 'Audio Cleanup', description: 'Noise reduction & enhancement' },
-      { url: 'src/assets/videos/p2brahmos podcast.mp4', thumbnail: 'src/assets/images/p2brahmos podcast.jpg', title: 'Multi-track Mixing', description: 'Perfect audio balance' },
-      { url: 'src/assets/videos/p3grow podcast.mp4', thumbnail: 'src/assets/images/p3groww podcast.jpg', title: 'Video Podcast', description: 'Synchronized video editing' }
+      {
+        url: 'https://digitalsupremacy.in/creative-site-videos/p1army%20podcast%20trailer.mp4',
+        thumbnail: p1,
+        title: 'Audio Cleanup',
+        description: 'Noise reduction & enhancement'
+      },
+      {
+        url: 'https://digitalsupremacy.in/creative-site-videos/p2brahmos%20podcast.mp4',
+        thumbnail: p2,
+        title: 'Multi-track Mixing',
+        description: 'Perfect audio balance'
+      },
+      {
+        url: 'https://digitalsupremacy.in/creative-site-videos/p3grow%20podcast.mp4',
+        thumbnail: p3,
+        title: 'Video Podcast',
+        description: 'Synchronized video editing'
+      }
     ]
   },
   {
@@ -36,9 +83,24 @@ const services = [
     whatWeDo: ['Scripting support (if needed)', 'Product highlights & animations', 'Call-to-action visuals', 'Soundtracks & SFX'],
     cta: "🔥 Ready to create scroll-proof ads that convert like crazy?",
     videos: [
-      { url: 'src/assets/videos/ca1hardik raja ppt.MP4', thumbnail: 'src/assets/images/hardikhhtumb.png', title: 'Brand Commercial', description: 'Corporate identity videos' },
-      { url: 'src/assets/videos/ca2qualicom ad.mp4', thumbnail: 'src/assets/images/freepik__expand__52420.png', title: 'Product Launch', description: 'High-conversion advertising' },
-      { url: 'src/assets/videos/ca3THERMAX ad.mp4', thumbnail: 'src/assets/images/thermaxthumb.png', title: 'Social Media Ads', description: 'Platform-specific optimization' }
+      {
+        url: 'https://digitalsupremacy.in/creative-site-videos/ca1hardik%20raja%20ppt.MP4',
+        thumbnail: hardik,
+        title: 'Brand Commercial',
+        description: 'Corporate identity videos'
+      },
+      {
+        url: 'https://digitalsupremacy.in/creative-site-videos/ca2qualicom%20ad.mp4',
+        thumbnail: freepik,
+        title: 'Product Launch',
+        description: 'High-conversion advertising'
+      },
+      {
+        url: 'https://digitalsupremacy.in/creative-site-videos/ca3THERMAX%20ad.mp4',
+        thumbnail: thermax,
+        title: 'Social Media Ads',
+        description: 'Platform-specific optimization'
+      }
     ]
   },
   {
@@ -48,22 +110,22 @@ const services = [
     whatWeDo: ['Hook-focused editing', 'Captions & emojis', 'Zoom cuts & kinetic effects', 'Sound syncing to trends'],
     cta: "🚀 Let's make your brand go viral in under 60 seconds.",
     videos: [
-      { 
-        url: 'src/assets/videos/shorts111111.mp4', 
-        title: 'Instagram Reel Edit', 
+      {
+        url: 'https://digitalsupremacy.in/creative-site-videos/shorts111111.mp4',
+        title: 'Instagram Reel Edit',
         description: 'Quick cuts with trending music',
-        style: { 
+        style: {
           objectFit: 'cover',
           height: '100%',
           width: '100%',
           alignSelf: 'flex-start'
         }
       },
-      { 
-        url: 'src/assets/videos/sh2codehub ad jan.mp4', 
-        title: 'TikTok Viral Edit', 
+      {
+        url: 'https://digitalsupremacy.in/creative-site-videos/sh2codehub%20ad%20jan.mp4',
+        title: 'TikTok Viral Edit',
         description: 'Hook within first 3 seconds',
-        style: { 
+        style: {
           objectFit: 'cover',
           height: '100%',
           width: 'auto',
@@ -72,11 +134,11 @@ const services = [
           display: 'block'
         }
       },
-      { 
-        url: 'src/assets/videos/sh3EONX_English.mp4', 
-        title: 'YouTube Shorts', 
+      {
+        url: 'https://digitalsupremacy.in/creative-site-videos/sh3EONX_English.mp4',
+        title: 'YouTube Shorts',
         description: 'Vertical format optimization',
-        style: { 
+        style: {
           objectFit: 'cover',
           height: '100%',
           width: 'auto',
@@ -94,32 +156,25 @@ const services = [
     whatWeDo: ['Brand identity & logo design', 'Social media graphics & templates', 'Print design & marketing materials', 'UI/UX design elements'],
     cta: "🎨 Let's create a visual identity that sets you apart from the competition.",
     videos: [
-      { 
-        title: 'Brand Identity Design', 
+      {
+        title: 'Brand Identity Design',
         description: 'Complete visual brand transformation',
-        images: [
-          'src/assets/images/graphicsthumbnail.png'
-        ]
+        images: [g1]
       },
-      { 
-        title: 'Marketing Posters', 
+      {
+        title: 'Marketing Posters',
         description: 'Eye-catching promotional materials',
-        images: [
-          'src/assets/images/graphicsposter1.jpg',
-          'src/assets/images/graphicsposter2.jpg'
-        ]
+        images: [g2, g3]
       },
-      { 
-        title: 'Social Media Posts', 
+      {
+        title: 'Social Media Posts',
         description: 'Consistent brand presence across platforms',
-        images: [
-          'src/assets/images/graphicspost1.png',
-          'src/assets/images/graphicspost2.png.jpg',
-        ]
+        images: [g4, g5]
       }
     ]
   }
 ];
+
 
 const Work = ({ toggleContactForm }) => {
   const refs = {

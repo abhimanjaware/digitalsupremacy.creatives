@@ -83,7 +83,7 @@ function Services() {
     setIsHovered(true);
   };
 
-  const handleMouseLeave = (index) => {
+  const handleMouseLeave = () => {
     setIsHovered(false);
   };
 
@@ -326,7 +326,7 @@ function Services() {
 
           <div 
             ref={imageBoxRef}
-            className={`w-1/2 h-[65vh] xl:h-[70vh] sticky top-24 rounded-xl overflow-hidden shadow-2xl border border-neutral-800/50 bg-neutral-900 transition-all duration-500 relative ${
+            className={`w-1/2 h-[65vh] xl:h-[70vh] sticky top-24 rounded-xl overflow-hidden shadow-2xl border border-neutral-800/50 bg-neutral-900 transition-all duration-500 ${
               isHovered ? 'shadow-yellow-300/20' : ''
             }`}
           >

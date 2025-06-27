@@ -17,8 +17,6 @@ import g3 from '@/assets/images/graphicsposter2.jpg';
 import g4 from '@/assets/images/graphicspost1.png';
 import g5 from '@/assets/images/graphicspost2.png.jpg';
 
-
-
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
@@ -175,7 +173,6 @@ const services = [
   }
 ];
 
-
 const Work = ({ toggleContactForm }) => {
   const refs = {
     container: useRef(null),
@@ -193,7 +190,6 @@ const Work = ({ toggleContactForm }) => {
   useEffect(() => {
     const isMobile = window.innerWidth < 1024;
     
-    // Performance optimizations
     gsap.config({
       force3D: false,
       autoSleep: 60,
@@ -201,7 +197,7 @@ const Work = ({ toggleContactForm }) => {
     });
 
     const ctx = gsap.context(() => {
-      // Optimized initial setup
+      // Initial setup
       gsap.set(refs.letters.current, { 
         opacity: 0, 
         y: 50,
@@ -211,7 +207,6 @@ const Work = ({ toggleContactForm }) => {
         transformOrigin: "center bottom"
       });
       
-      // Faster stagger animations
       refs.serviceContainers.current.forEach(section => {
         if (!section) return;
         const left = section.querySelector('.left-section');
@@ -222,27 +217,13 @@ const Work = ({ toggleContactForm }) => {
 
       if (refs.cta.current?.children) gsap.set(refs.cta.current.children, { opacity: 0, scale: 0.9, y: 30 });
 
-      // Optimized ScrollTrigger animations
       refs.rightSec.current.forEach((section) => {
         if (!section) return;
         const [video, info] = [section.querySelector('.video-container'), section.querySelector('.video-info')];
         if (video && info) gsap.set([video, info], { opacity: 0, y: 50, scale: 0.98 });
-        
-        if (!isMobile) {
-          ScrollTrigger.create({
-            trigger: section,
-            start: "top bottom-=50",
-            end: "bottom top+=50",
-            onEnter: () => {
-              gsap.to(section, { autoAlpha: 1, duration: 0.3 });
-            },
-            onLeaveBack: () => {
-              gsap.to(section, { autoAlpha: 1, duration: 0.3 });
-            }
-          });
-        }
       });
 
+      // OUR WORK letters animation
       if (!isMobile) {
         ScrollTrigger.create({
           trigger: refs.ourWork.current,
@@ -269,7 +250,6 @@ const Work = ({ toggleContactForm }) => {
           }
         });
       } else {
-        // Faster mobile animation
         gsap.to(refs.letters.current, {
           opacity: 1,
           y: 0,
@@ -287,7 +267,7 @@ const Work = ({ toggleContactForm }) => {
         });
       }
 
-      // Optimized section animations
+      // Section animations
       refs.serviceContainers.current.forEach((section, i) => {
         if (!section) return;
         const left = section.querySelector('.left-section');
@@ -312,22 +292,7 @@ const Work = ({ toggleContactForm }) => {
               ease: "power1.out"
             });
           },
-          onLeaveBack: () => {
-            if (left?.children) gsap.to(left.children, { 
-              opacity: 0, 
-              x: -50,
-              duration: 0.5,
-              stagger: 0.05,
-              ease: "power1.in"
-            });
-            if (mobileTitle?.children) gsap.to(mobileTitle.children, { 
-              opacity: 0, 
-              y: 30,
-              duration: 0.5,
-              stagger: 0.05,
-              ease: "power1.in"
-            });
-          }
+          toggleActions: "play none none none"
         });
 
         if (!isMobile) {
@@ -345,7 +310,7 @@ const Work = ({ toggleContactForm }) => {
         }
       });
 
-      // Optimized video animations
+      // Video animations
       refs.rightSec.current.forEach(section => {
         if (!section) return;
         const [video, info] = [section.querySelector('.video-container'), section.querySelector('.video-info')];
@@ -368,17 +333,11 @@ const Work = ({ toggleContactForm }) => {
               ease: "power1.out"
             }, 'a');
           },
-          onLeaveBack: () => gsap.to([video, info], { 
-            opacity: 0, 
-            y: 50,
-            scale: 0.98,
-            duration: 0.5,
-            ease: "power1.in"
-          })
+          toggleActions: "play none none none"
         });
       });
 
-      // Faster CTA animation
+      // CTA animation
       if (refs.cta.current?.children) {
         ScrollTrigger.create({
           trigger: refs.cta.current,
@@ -391,18 +350,10 @@ const Work = ({ toggleContactForm }) => {
             stagger: 0.1,
             ease: "back.out(1.4)"
           }),
-          onLeaveBack: () => gsap.to(refs.cta.current.children, { 
-            opacity: 0, 
-            scale: 0.9, 
-            y: 30,
-            duration: 0.4,
-            stagger: 0.05,
-            ease: "power1.in"
-          })
+          toggleActions: "play none none none"
         });
       }
 
-      // Performance optimizations
       ScrollTrigger.normalizeScroll(true);
       ScrollTrigger.config({
         autoRefreshEvents: "visibilitychange,DOMContentLoaded,load",
@@ -653,9 +604,6 @@ const Work = ({ toggleContactForm }) => {
                       </div>
                       <p className="text-gray-600 font-[Quicksand] text-sm sm:text-base md:text-lg leading-relaxed">{video.description}</p>
                       <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3 md:space-x-4 pt-2 sm:pt-3 md:pt-4">
-                        {/* <button className="bg-purple-900 text-white px-4 sm:px-5 md:px-6 py-1 sm:py-2 rounded-full hover:bg-purple-800 transition-colors duration-300 font-medium text-xs sm:text-sm md:text-base">
-                          {service.title === 'Graphic Design' ? 'View Portfolio' : 'Watch Demo'}
-                        </button> */}
                         <button onClick={toggleContactForm} className="border-2 border-purple-900 text-purple-900 px-4 sm:px-5 md:px-6 py-1 sm:py-2 rounded-full hover:bg-purple-900 hover:text-white transition-colors duration-300 font-medium text-xs sm:text-sm md:text-base">Learn More</button>
                       </div>
                     </div>

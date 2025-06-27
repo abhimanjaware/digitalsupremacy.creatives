@@ -69,25 +69,25 @@ const Footer = () => {
             <div>
               <h4 className="font-semibold text-base mb-1">Address</h4>
               <p>
-                Your Creative Agency <br />
-                Shop 7, 14 Tripovich Street <br />
-                Brunswick, Melbourne.
+                60, Pandit Colony, <br />
+                above Ananda Laundry,  <br />
+                Nashik-422002.
               </p>
             </div>
             <div>
               <h4 className="font-semibold text-base mb-1">New Business</h4>
               <p className="break-all">
-                lauren@yourcreative.com.au <br />
-                +61 423 197 690
+                info@digitalsupermacy.in <br />
+                +919689772863
               </p>
             </div>
             <div>
               <h4 className="font-semibold text-base mb-1">Connect</h4>
               <div className="flex space-x-3 mt-1">
-                <a href="#" className="border border-white p-2 rounded-full hover:opacity-80 transition-opacity">
+                <a href="https://www.instagram.com/digitalsupremacy.in?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="border border-white p-2 rounded-full hover:opacity-80 transition-opacity">
                   <FaInstagram className="text-sm" />
                 </a>
-                <a href="#" className="border border-white p-2 rounded-full hover:opacity-80 transition-opacity">
+                <a href="https://www.linkedin.com/company/digital-supremacy-in/" className="border border-white p-2 rounded-full hover:opacity-80 transition-opacity">
                   <FaLinkedin className="text-sm" />
                 </a>
               </div>
@@ -112,7 +112,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div>
+            {/* <div>
               <h4 className="text-base font-semibold mb-2">Proudly partners of:</h4>
               <div className="flex flex-col gap-3 text-white/80">
                 <span className="flex items-center gap-2">
@@ -124,7 +124,7 @@ const Footer = () => {
                   Carbon Neutral Certified
                 </span>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

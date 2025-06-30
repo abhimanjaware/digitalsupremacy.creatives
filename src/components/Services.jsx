@@ -60,6 +60,7 @@ function Services() {
         "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&h=600&fit=crop&q=80"
       ]
     },
+    
   ];
 
   useEffect(() => {

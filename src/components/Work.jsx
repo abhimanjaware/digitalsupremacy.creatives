@@ -546,12 +546,12 @@ const Work = ({ toggleContactForm }) => {
           </p>
         </div>
         <div className="text-center w-full px-2">
-          <h2 className="text-black font-bold text-[40px] xs:text-[50px] sm:text-[60px] md:text-[80px] lg:text-[120px] xl:text-[220px] leading-none tracking-wide">
+          <h2 className="text-black font-bold text-[40px] xs:text-[50px] sm:text-[60px] md:text-[80px] lg:text-[120px] xl:text-[220px] whitespace-nowrap leading-none tracking-wide">
             {ourWorkLetters.map((l, i) => (
               <span 
                 key={i} 
                 ref={el => (refs.letters.current[i] = el)} 
-                className="inline-block origin-bottom transform-gpu will-change-transform"
+                className="inline-block origin-bottom transform-gpu whitespace-nowrap will-change-transform"
                 style={{ display: 'inline-block' }}
               >
                 {l === " " ? "\u00A0" : l}

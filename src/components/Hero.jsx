@@ -204,7 +204,7 @@ const Hero = ({ toggleContactForm }) => {
         <div className="overflow-hidden w-full text-center mb-4 sm:mb-6 md:mb-8">
           <h1 className={`font-bold text-black leading-tight ${getTextSizeClass()}`}>
             {isMobile || isTablet ? (
-              <div className="flex justify-center flex-wrap">
+              <div className="flex justify-center whitespace-nowrap flex-wrap">
                 {TITLE_WORDS.mobile.map((letter, index) => (
                   <span 
                     key={`mobile-title-${index}`} 

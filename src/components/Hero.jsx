@@ -210,7 +210,7 @@ const Hero = ({ toggleContactForm }) => {
                     key={`mobile-title-${index}`} 
                     className="inline-block transition-all duration-600 ease-out"
                     style={{
-                      width: letter === ' ' ? '0.2em' : 'auto',
+                      width: letter === ' ' ? '0.1em' : 'auto',
                       opacity: 0,
                       transform: 'translateY(20px) rotateX(-90deg)',
                       transformOrigin: 'center bottom'

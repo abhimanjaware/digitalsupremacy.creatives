@@ -1,4 +1,5 @@
 import { useState, useRef, useCallback, useMemo, useEffect } from 'react';
+import vsl from '../assets/videos/vsl.mp4';
 
 const Hero = ({ toggleContactForm }) => {
   const videoRef = useRef(null);
@@ -16,13 +17,10 @@ const Hero = ({ toggleContactForm }) => {
   const handleMouseEnter = useCallback(() => setIsVslHovered(true), []);
   const handleMouseLeave = useCallback(() => setIsVslHovered(false), []);
 
-  // Title words configuration
+  // Title words configuration - modified for single line
   const TITLE_WORDS = useMemo(() => ({
     mobile: ['D', 'i', 'g', 'i', 't', 'a', 'l', ' ', 'S', 'u', 'p', 'r', 'e', 'm', 'a', 'c', 'y'],
-    desktop: [
-      ['D', 'i', 'g', 'i', 't', 'a', 'l'],
-      ['S', 'u', 'p', 'r', 'e', 'm', 'a', 'c', 'y']
-    ]
+    desktop: ['D', 'i', 'g', 'i', 't', 'a', 'l', ' ', 'S', 'u', 'p', 'r', 'e', 'm', 'a', 'c', 'y']
   }), []);
 
   // Check for mobile and tablet on mount and resize
@@ -80,14 +78,14 @@ const Hero = ({ toggleContactForm }) => {
     return () => clearTimeout(timer);
   }, [isMobile, isTablet]);
 
-  // Get responsive text size class
+  // Get responsive text size class - reduced sizes
   const getTextSizeClass = () => {
     if (isMobile) {
-      return 'text-5xl xs:text-6xl sm:text-7xl';
+      return 'text-3xl xs:text-4xl sm:text-5xl';
     } else if (isTablet) {
-      return 'text-7xl md:text-8xl lg:text-9xl';
+      return 'text-5xl md:text-6xl lg:text-7xl';
     } else {
-      return 'text-8xl lg:text-9xl xl:text-[10rem] 2xl:text-[12rem] 3xl:text-[14rem]';
+      return 'text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl 3xl:text-[10rem]';
     }
   };
 
@@ -202,59 +200,23 @@ const Hero = ({ toggleContactForm }) => {
         ref={textRef}
       >
         <div className="overflow-hidden w-full text-center mb-4 sm:mb-6 md:mb-8">
-          <h1 className={`font-bold text-black leading-tight ${getTextSizeClass()}`}>
-            {isMobile || isTablet ? (
-              <div className="flex justify-center whitespace-nowrap flex-wrap">
-                {TITLE_WORDS.mobile.map((letter, index) => (
-                  <span 
-                    key={`mobile-title-${index}`} 
-                    className="inline-block transition-all duration-600 ease-out"
-                    style={{
-                      width: letter === ' ' ? '0.1em' : 'auto',
-                      opacity: 0,
-                      transform: 'translateY(20px) rotateX(-90deg)',
-                      transformOrigin: 'center bottom'
-                    }}
-                  >
-                    {letter}
-                  </span>
-                ))}
-              </div>
-            ) : (
-              <div className="space-y-2 lg:space-y-4">
-                <div className="block">
-                  {TITLE_WORDS.desktop[0].map((letter, index) => (
-                    <span 
-                      key={`digital-${index}`} 
-                      className="inline-block transition-all duration-600 ease-out"
-                      style={{
-                        opacity: 0,
-                        transform: 'translateY(40px) rotateX(-90deg)',
-                        transformOrigin: 'center bottom'
-                      }}
-                    >
-                      {letter}
-                    </span>
-                  ))}
-                </div>
-                <div className="block">
-                  {TITLE_WORDS.desktop[1].map((letter, index) => (
-                    <span 
-                    
-                      key={`supremacy-${index}`} 
-                      className="inline-block transition-all duration-600 ease-out"
-                      style={{
-                        opacity: 0,
-                        transform: 'translateY(40px) rotateX(-90deg)',
-                        transformOrigin: 'center bottom'
-                      }}
-                    >
-                      {letter}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
+          <h1 className={`font-bold text-black leading-tight whitespace-nowrap ${getTextSizeClass()}`}>
+            <div className="flex justify-center">
+              {TITLE_WORDS[isMobile || isTablet ? 'mobile' : 'desktop'].map((letter, index) => (
+                <span 
+                  key={`title-${index}`} 
+                  className="inline-block transition-all duration-600 ease-out"
+                  style={{
+                    width: letter === ' ' ? '0.3em' : 'auto',
+                    opacity: 0,
+                    transform: 'translateY(20px) rotateX(-90deg)',
+                    transformOrigin: 'center bottom'
+                  }}
+                >
+                  {letter}
+                </span>
+              ))}
+            </div>
           </h1>
         </div>
         
@@ -279,7 +241,7 @@ const Hero = ({ toggleContactForm }) => {
             muted
             loop
           >
-            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" type="video/mp4" />
+            <source src={vsl} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
